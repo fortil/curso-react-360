@@ -5,6 +5,9 @@ import {
   Text,
   View,
 } from 'react-360';
+import CurrentPost from './CurrentPost';
+import * as Store from './Store';
+Store.initialize('API KEY HERE');
 
 export default class Hello360 extends React.Component {
   render() {
@@ -40,4 +43,5 @@ const styles = StyleSheet.create({
   },
 });
 
+AppRegistry.registerComponent('CurrentPost', () => CurrentPost);
 AppRegistry.registerComponent('Hello360', () => Hello360);
