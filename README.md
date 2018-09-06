@@ -1,7 +1,5 @@
 # Pasos para implementar React360
 
-# Pasos para implementar React360
-
 ## Antes que nada
 Dirigete a [Poly](https://developers.google.com/poly/develop/web) y genera una API key para usar este servicio de Google. Para qué sirve Poly?es una librería donde la gente comparte, busca y hacen "remix" de assets 3D. Para más información puedes visitar [este enlace](https://developers.google.com/poly/develop).
 
