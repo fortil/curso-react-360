@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {Animated, View} from 'react-360';
+import { Animated, View } from 'react-360';
 import Entity from 'Entity';
 import AmbientLight from 'AmbientLight';
 import PointLight from 'PointLight';
-import {connect} from './Store';
+import { connect } from './Store';
 
 const AnimatedEntity = Animated.createAnimatedComponent(Entity);
 
@@ -13,7 +13,7 @@ class ModelView extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.current !== this.props.current) {
       this.rotation.setValue(0);
-      Animated.timing(this.rotation, {toValue: 360, duration: 20000}).start();
+      Animated.timing(this.rotation, { toValue: 360, duration: 20000 }).start();
     }
   }
 
@@ -28,11 +28,11 @@ class ModelView extends React.Component {
         <AmbientLight intensity={1.0} color={'#ffffff'} />
         <PointLight
           intensity={0.4}
-          style={{transform: [{translate: [0, 4, -1]}]}}
+          style={{ transform: [{ translate: [0, 4, -1] }] }}
         />
         <AnimatedEntity
-          style={{transform: [{rotateY: this.rotation}]}}
-          source={{gltf2: source.root.url}}
+          style={{ transform: [{ rotateY: this.rotation }] }}
+          source={{ gltf2: source.root.url }}
         />
       </View>
     );

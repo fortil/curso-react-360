@@ -6,8 +6,6 @@ function init(bundle, parent, options = {}) {
     ...options,
   });
 
-  // Create three roots: two flat panels on the left and the right, and a Location
-  // to mount rendered models in 3D space
   const leftPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
   leftPanel.setAngle(-0.6, 0);
   const rightPanel = new Surface(300, 600, Surface.SurfaceShape.Flat);
