@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Animated, View } from 'react-360';
+import { Animated, View, asset } from 'react-360';
 import Entity from 'Entity';
 import AmbientLight from 'AmbientLight';
 import PointLight from 'PointLight';
@@ -30,9 +30,11 @@ class ModelView extends React.Component {
           intensity={0.4}
           style={{ transform: [{ translate: [0, 4, -1] }] }}
         />
-        <AnimatedEntity
-          style={{ transform: [{ rotateY: this.rotation }] }}
-          source={{ gltf2: source.root.url }}
+        <Entity
+          style={{ transform: [{ scale: [0.05, 0.05, 5] }] }}
+          // style={{ transform: [{ rotateY: this.rotation }] }}
+          source={{ obj: asset('/obj/Buell.obj'), mtl: asset('/obj/Buell.mtl') }}
+          // source={{ gltf2: source.root.url }}
         />
       </View>
     );

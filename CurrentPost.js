@@ -1,29 +1,32 @@
 import * as React from 'react';
-import {StyleSheet, Text, View, VrButton} from 'react-360';
-import {connect} from './Store';
+import { Animated, StyleSheet, Text, View } from 'react-360';
+import { connect } from './Store';
 
+class CurrentPost extends React.Component {
+  rotation = new Animated.Value(0);
 
-const CurrentPost = props => {
-  if (!props.posts) {
-    return <View style={styles.wrapper} />;
-  }
-  if (props.current < 0) {
+  render() {
+    if (!this.props.posts) {
+      return <View style={styles.wrapper} />;
+    }
+    if (this.props.current < 0) {
+      return (
+        <View style={styles.wrapper}>
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <Text style={{ textAlign: 'center' }}>Select a Model</Text>
+          </View>
+        </View>
+      );
+    }
+    const post = this.props.posts[this.props.current];
     return (
       <View style={styles.wrapper}>
-        <View style={{flex: 1, justifyContent: 'center'}}>
-          <Text style={{textAlign: 'center'}}>Select a Model</Text>
-        </View>
+        <Text style={styles.name}>{post.name}</Text>
+        <Text style={styles.author}>{post.author}</Text>
+        <Text style={styles.description}>{post.description}</Text>
       </View>
     );
   }
-  const post = props.posts[props.current];
-  return (
-    <View style={styles.wrapper}>
-      <Text style={styles.name}>{post.name}</Text>
-      <Text style={styles.author}>{post.author}</Text>
-      <Text style={styles.description}>{post.description}</Text>
-    </View>
-  );
 };
 
 const styles = StyleSheet.create({

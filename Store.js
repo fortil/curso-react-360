@@ -33,7 +33,7 @@ export function initialize(apiKey) {
     curated: true,
     format: 'GLTF2',
     key: apiKey,
-    pageSize: 5,
+    pageSize: 6,
   };
   // convertimos a formato query (string) los parámetros anteriores
   const queryString = Object.keys(options)
